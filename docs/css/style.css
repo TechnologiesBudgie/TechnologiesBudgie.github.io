@@ -5,10 +5,9 @@ body {
   display: flex;
   flex-direction: column;
   color: #f5f5f5;
-  background-color: #0f1a2e;
+  background-color: #121212;
   position: relative;
   overflow-x: hidden;
-  overflow-y: auto; /* FIX: allows scrolling */
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -17,16 +16,16 @@ body::before {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
-  z-index: -1; /* FIX: prevents Firefox scroll blocking */
+  z-index: 0;
   background-repeat: repeat;
   background-position: 0 0;
   background-size: 120px 120px;
   background-image:
-    linear-gradient(120deg, rgba(100, 120, 255, 0.18) 33%, transparent 33%),
-    linear-gradient(30deg, rgba(80, 80, 120, 0.20) 33%, transparent 33%),
-    linear-gradient(150deg, transparent 66%, rgba(100, 140, 255, 0.16) 66%),
-    linear-gradient(45deg, rgba(70, 70, 120, 0.12) 25%, transparent 25%),
-    linear-gradient(90deg, rgba(140, 160, 255, 0.10) 20%, transparent 20%);
+    linear-gradient(120deg, rgba(76, 76, 255, 0.12) 33%, transparent 33%),
+    linear-gradient(30deg, rgba(50, 50, 50, 0.15) 33%, transparent 33%),
+    linear-gradient(150deg, transparent 66%, rgba(76, 76, 255, 0.10) 66%),
+    linear-gradient(45deg, rgba(50, 50, 50, 0.08) 25%, transparent 25%),
+    linear-gradient(90deg, rgba(100, 100, 255, 0.06) 20%, transparent 20%);
   background-position:
     15% 25%, 45% 35%, 70% 55%, 35% 75%, 80% 25%;
   background-size:
@@ -54,16 +53,15 @@ body::before {
 }
 
 .wave svg path {
-  fill: #6c7bff;
+  fill: #4c4cff;
 }
 
 header {
   text-align: center;
-  margin-top: 0; /* FIX: prevents header from sliding under Firefox UI */
-  padding-top: 2rem; /* keeps spacing correct */
+  margin-top: -60px;
   position: relative;
   z-index: 20;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 1rem 2rem;
   margin: 0 1rem 1rem;
   border-radius: 12px;
@@ -85,7 +83,7 @@ main {
   padding: 2rem 1rem 3rem;
   position: relative;
   z-index: 20;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.6);
   margin: 0 1rem 1rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.8);
@@ -108,24 +106,6 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* centered list bullets + text */
-ul, ol {
-  padding: 0;
-  margin: 1rem auto;
-  list-style-position: inside;
-  text-align: center;
-}
-
-a {
-  color: #00ff00 !important;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
 .home-link {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -145,7 +125,7 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.6);
   color: #f5f5f5;
   position: relative;
   z-index: 20;
@@ -154,18 +134,20 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
+/* toggle button removed — not needed */
+
 .footer-links-box {
   max-width: 600px;
   margin: 1.5rem auto 0 auto;
   padding: 1rem 2rem;
   border-radius: 16px;
-  background: rgba(44, 62, 80, 0.35);
+  background: rgba(44, 62, 80, 0.18);
   display: flex;
   gap: 2rem;
   justify-content: center;
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.05);
   font-size: 1.1rem;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
 }
 
 .footer-links-box a {
@@ -180,4 +162,6 @@ footer {
   text-decoration: underline;
 }
 
-
+a {
+  color: green !important;
+}
