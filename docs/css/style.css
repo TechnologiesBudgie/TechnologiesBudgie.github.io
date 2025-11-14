@@ -5,12 +5,13 @@ body {
   display: flex;
   flex-direction: column;
   color: #f5f5f5;
-  background-color: #121212;
+  background-color: #0f1a2e; /* slightly lighter blue tone */
   position: relative;
   overflow-x: hidden;
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* lighter, more blue-tinted background pattern */
 body::before {
   content: "";
   position: fixed;
@@ -21,11 +22,11 @@ body::before {
   background-position: 0 0;
   background-size: 120px 120px;
   background-image:
-    linear-gradient(120deg, rgba(76, 76, 255, 0.12) 33%, transparent 33%),
-    linear-gradient(30deg, rgba(50, 50, 50, 0.15) 33%, transparent 33%),
-    linear-gradient(150deg, transparent 66%, rgba(76, 76, 255, 0.10) 66%),
-    linear-gradient(45deg, rgba(50, 50, 50, 0.08) 25%, transparent 25%),
-    linear-gradient(90deg, rgba(100, 100, 255, 0.06) 20%, transparent 20%);
+    linear-gradient(120deg, rgba(100, 120, 255, 0.18) 33%, transparent 33%),
+    linear-gradient(30deg, rgba(80, 80, 120, 0.20) 33%, transparent 33%),
+    linear-gradient(150deg, transparent 66%, rgba(100, 140, 255, 0.16) 66%),
+    linear-gradient(45deg, rgba(70, 70, 120, 0.12) 25%, transparent 25%),
+    linear-gradient(90deg, rgba(140, 160, 255, 0.10) 20%, transparent 20%);
   background-position:
     15% 25%, 45% 35%, 70% 55%, 35% 75%, 80% 25%;
   background-size:
@@ -37,6 +38,7 @@ body::before {
   background-blend-mode: screen;
 }
 
+/* Wave */
 .wave {
   width: 100%;
   height: 150px;
@@ -53,20 +55,25 @@ body::before {
 }
 
 .wave svg path {
-  fill: #4c4cff;
+  fill: #6c7bff;
 }
 
-header {
-  text-align: center;
-  margin-top: -60px;
+/* Text blocks less transparent */
+header, main, footer {
   position: relative;
   z-index: 20;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.75); /* darker, less transparent */
   padding: 1rem 2rem;
   margin: 0 1rem 1rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.8);
   color: #f5f5f5;
+}
+
+/* Header tweaks */
+header {
+  text-align: center;
+  margin-top: -60px;
 }
 
 header img {
@@ -81,13 +88,6 @@ main {
   flex: 1;
   text-align: center;
   padding: 2rem 1rem 3rem;
-  position: relative;
-  z-index: 20;
-  background-color: rgba(0, 0, 0, 0.6);
-  margin: 0 1rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.8);
-  color: #f5f5f5;
 }
 
 main img {
@@ -106,6 +106,26 @@ p {
   margin-bottom: 1.5rem;
 }
 
+/* Make <li> centered, and move bullet with text */
+ul, ol {
+  padding: 0;
+  margin: 1rem auto;
+  list-style-position: inside; /* bullet moves with centered text */
+  text-align: center;
+}
+
+/* Link styling */
+a {
+  color: #00ff00 !important; /* neon green URLs */
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* button */
 .home-link {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -121,33 +141,19 @@ p {
   background-color: #3434ff;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  background: rgba(0, 0, 0, 0.6);
-  color: #f5f5f5;
-  position: relative;
-  z-index: 20;
-  margin: 0 1rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.8);
-}
-
-/* toggle button removed — not needed */
-
+/* footer */
 .footer-links-box {
   max-width: 600px;
   margin: 1.5rem auto 0 auto;
   padding: 1rem 2rem;
   border-radius: 16px;
-  background: rgba(44, 62, 80, 0.18);
+  background: rgba(44, 62, 80, 0.35); /* more solid */
   display: flex;
   gap: 2rem;
   justify-content: center;
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.3);
   font-size: 1.1rem;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
 }
 
 .footer-links-box a {
@@ -162,6 +168,3 @@ footer {
   text-decoration: underline;
 }
 
-a {
-  color: green !important;
-}
